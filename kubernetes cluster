@@ -1,0 +1,27 @@
+#Install Minikube:
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+#Start Minikube:
+minikube start --driver=docker
+
+#Check if Minikube is running:
+minikube status
+
+#Check cluster nodes:
+kubectl get nodes
+
+#Clone the DVWA Repository:
+git clone https://github.com/cytopia/docker-dvwa.git
+cd docker-dvwa
+
+#Create a Deployment and Service for DVWA:
+#Create a YAML file (dvwa-deployment.yaml) 
+
+#Deploy DVWA on Kubernetes:
+kubectl apply -f dvwa-deployment.yaml
+
+#To access DVWA, run:
+minikube service dvwa-service --url
+
+
